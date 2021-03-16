@@ -42,7 +42,7 @@ exports.civWebhook = functions.https.onRequest((request, response) => {
         "content": message
       }).then( () => {
         return response.send(message);
-      }).catch( () => {
+      }).catch( (error) => {
         if (error.response) {
           // The request was made and the server responded with a status code
           // that falls out of the range of 2xx
